@@ -1,0 +1,25 @@
+<div><h2>Admin view students details</h2></div>
+
+<div class="row std-list">
+    <div class="col-md-1 std-list">ID</div>
+    <div class="col-md-1 std-list">Name</div>
+    <div class="col-md-1 std-list">Describtion</div>
+    <div class="col-md-1 std-list">DOB</div>
+    <div class="col-md-1 std-list">Subject</div>
+    <div class="col-md-1 std-list">Edit</div>
+    <div class="col-md-1 std-list">Delete</div>
+</div>
+
+<div class="row std-list" *ngFor="let std of students">
+    <div class="col-md-1 std-list">{{std.sId}}</div>
+    <div class="col-md-1 std-list">{{std.Name}}</div>
+    <div class="col-md-1 std-list">{{std.des}}</div>
+    <div class="col-md-1 std-list">{{std.dob}}</div>
+    <div class="col-md-1 std-list">{{std.sub}}</div>
+    <div class="col-md-1 std-list"><button class="btn btn-danger" (click)="edit(std)">Edit</button></div>
+    <div class="col-md-1 std-list"><button class="btn btn-danger" (click)="delete(std)">Remove</button></div>
+
+</div>
+<div>
+    <a routerLink="/add" class="btn btn-primary">Add students</a> 
+</div>

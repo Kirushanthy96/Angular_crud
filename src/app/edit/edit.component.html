@@ -1,0 +1,66 @@
+<div class="add-main">
+    <h2 class="text center">Edit Student details</h2>
+  
+    <form [formGroup]="addForm" novalidate class="form">
+      
+      <div class="form-group">
+        <label for="sId"> </label>
+        <input type="hidden" formControlName="sId" placeholder="Student Id" name="sId" class="form-control" id="sId"> 
+      </div>
+  
+      <div class="form-group">
+        <label for="Name">Student Name: </label>
+        <input type="text" formControlName="Name" placeholder="Student Name" name="Name" class="form-control" id="Name"> 
+      </div>
+  
+      <div class="alert alert-danger" *ngIf="addForm.get('Name').hasError('required')&& addForm.get('Name').touched">
+        Please Enter Name
+     </div>
+  
+     <div class="alert alert-danger" *ngIf="addForm.get('Name').hasError('maxlength')&& addForm.get('Name').touched">
+      maximum 15 charecters
+    </div>
+  
+      <div class="form-group">
+        <label for="des">Describtion </label>
+        <input type="text" formControlName="des" placeholder="Describtion" name="des" class="form-control" id="des"> 
+      </div>
+  
+    
+      <div class="alert alert-danger" *ngIf="addForm.get('des').hasError('required')&& addForm.get('des').touched">
+        Please Enter Describtion
+      </div>
+  
+      <div class="alert alert-danger" *ngIf="addForm.get('des').hasError('maxlength')&& addForm.get('des').touched">
+        maximum 30 charecters
+      </div>
+  
+      <div class="form-group">
+        <label for="dob">Date of Birth </label>
+        <input type="date" formControlName="dob" placeholder="Date of Birth" name="dob" class="form-control" id="dob"> 
+      </div>
+      
+      <div class="alert alert-danger" *ngIf="addForm.get('dob').hasError('required')&& addForm.get('dob').touched">
+        Please Enter DOB
+      </div>
+  
+      <div class="form-group">
+      <label for="sub">Subject </label>
+      <input type="text" formControlName="sub" placeholder="Subject" name="sub" class="form-control" id="sub"> 
+    </div>
+  
+  
+    <div class="alert alert-danger" *ngIf="addForm.get('sub').hasError('required')&& addForm.get('sub').touched">
+      Please Enter Subject
+    </div>
+  
+      
+  
+      <button class="btn btn-success" (click)="update()">Edit update</button>
+  
+    </form>
+
+    
+
+    <a routerLink="/view" class="btn btn-primary">Admin view Students</a>
+  </div>
